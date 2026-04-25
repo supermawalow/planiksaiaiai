@@ -1,0 +1,18 @@
+{
+  "name": "planiks",
+  "version": "1.0.0",
+  "description": "Умный помощник для управления задачами",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 3000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "tasks",
+    "planner",
+    "ai",
+    "groq"
+  ],
+  "author": "",
+  "license": "MIT"
+}

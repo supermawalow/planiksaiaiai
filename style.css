@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: white;
+    font-family: Arial;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #66ccff;
+    margin-bottom: 30px;
+    font-size: 50px;
+}
+
+h2 {
+    color: #66ccff;
+    margin-bottom: 15px;
+}
+
+.page {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left, .right {
+    flex: 1;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #66ccff;
+    border: none;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+button:hover {
+    background-color: #44bbee;
+}
+
+#taskList {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.task {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.task input {
+    width: 20px;
+    margin: 0;
+}
+
+.task span {
+    flex: 1;
+    margin: 0;
+}
+
+.task .delete {
+    background-color: #ff4444;
+    padding: 5px 10px;
+    margin: 0;
+    width: auto;
+}
+
+.task .delete:hover {
+    background-color: #cc0000;
+}
+
+#chatBox {
+    background-color: #333;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.msg-user {
+    background-color: #66ccff;
+    color: #1a1a1a;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.msg-bot {
+    background-color: #444;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .page {
+        flex-direction: column;
+    }
+}
