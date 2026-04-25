@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const apiKey = process.env.GROQ_API_KEY;
 
     if (!apiKey) {
-        return res.status(500).json({ error: 'API key not configured' });
+        return res.status(500).json({ error: 'API key not configured in Vercel' });
     }
 
     try {
@@ -22,21 +22,20 @@ export default async function handler(req, res) {
                 messages: [
                     {
                         role: 'system',
-                        content: 'Ты ПЛАНИКС - умный помощник для управления задачами. Помогай пользователям организовывать дела, советуй по продуктивности и мотивируй. Отвечай коротко и четко на русском языке.'
+                        content: 'Ты ПЛАНИКС - умный помощник. Отвечай коротко и четко на русском языке.'
                     },
                     ...messages
                 ],
-                temperature: 0.7,
-                max_tokens: 500
+                temperature: 0.7
             })
         });
 
+        const data = await response.json();
+        
         if (!response.ok) {
-            const error = await response.json();
-            return res.status(response.status).json(error);
+            return res.status(response.status).json(data);
         }
 
-        const data = await response.json();
         return res.status(200).json(data);
     } catch (error) {
         return res.status(500).json({ error: error.message });
